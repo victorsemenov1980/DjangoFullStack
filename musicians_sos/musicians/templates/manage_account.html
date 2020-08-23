@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block text%}
+{%if error%}
+{{error}}
+<br />
+<br />
+{%endif%}
+Manage your account info
+{%endblock%}
+
+
+{%block content%}
+{%if not already%}
+<a href="{%url 'manage'%}">Enter main info</a>
+<br>
+{%endif%}
+<a href="{%url 'add_service'%}">Add services</a>
+{%endblock%}

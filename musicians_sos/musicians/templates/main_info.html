@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{%block text%}
+{%if error%}
+{{error}}
+<br />
+<br />
+{%endif%}
+Manage your account main info
+{%endblock%}
+
+
+{%block content%}
+
+<form method='POST' action="{%url 'manage'%}" enctype="multipart/form-data">
+    {%csrf_token%}
+    Name:
+    <br />
+    <input type="text" name='name'>
+    <br />
+    Email:
+    <br />
+    <input type="text" name='email'>
+    <br />
+    Phone:
+    <br />
+    <input type="text" name='phone'>
+    <br />
+    Cover letter (short personal message from you):
+    <br />
+
+    <textarea id="cover" name="cover" rows="4" cols="50" maxlength=100>
+Make some personal greeting. Max number of characters: 100 
+</textarea>
+    <br />
+    Bio (tell about yourself):
+
+    <br>
+    <textarea id="bio" name="bio" rows="4" cols="50">
+Tell people your story. Please write about yourself as a narrator. For example: "Jane graduated from .... at 1999 ..."
+</textarea>
+    <br />
+    What are the music instruments you are playing on:
+    <br />
+    <input type="text" name='instrument'>
+    <br />
+    Where you were working before:
+    <br />
+    <input type="text" name='organization'>
+    <br />
+    Photo:
+    <br />
+    <input type="file" name='photo'>
+    <br />
+
+
+    <input type="submit" value="Save!">
+
+</form>
+{%endblock%}

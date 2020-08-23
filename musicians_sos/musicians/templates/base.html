@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nashville Musician Services </title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+</head>
+
+<body>
+    <divLinks>
+        <a href="{%url 'index'%}">HOME</a>
+        >>
+        <a href="mailto:example@com.com">Contact</a>
+        >>
+        <a href="{%url 'signup'%}">SignUp</a>
+        >>
+        <a href="{%url 'login'%}">Log In</a>
+        >>
+        <a href="{%url 'faq'%}">FAQ</a>
+        >>
+    </divLinks>
+    <header>
+        <divName>
+            <div1>Nashville</div1>
+            <div>Musician Services</div>
+        </divName>
+
+
+        {%if user.is_authenticated%}
+        <div>
+            <a href="{%url 'manage_account'%}"><img src="{%static 'gear.png'%}" alt="manage account icon">Manage_Account</a>
+        </div>
+        <div>
+            <a href="javascript:{document.getElementById('logout').submit()}"><img src="{%static 'logout.png'%}" alt="logout icon">Log_me_Out</a>
+            <form id='logout' method='POST' action="{%url 'logout'%}">
+                {%csrf_token%}
+                <input type="hidden">
+            </form>
+            {%endif%}
+        </div>
+        <div class="navlink">
+
+            <a href="{%url 'nursing'%}"><img src="{%static 'balloon-dog.png'%}" alt="home/dog/baby sitting icon">Home/Dog/Baby_sitting</a>
+        </div>
+        <div>
+            <a href="{%url 'professional'%}"><img src="{%static 'public-transport.png'%}" alt="professional service icon">Professional_service</a>
+        </div>
+        <div>
+            <a href="{%url 'home'%}"><img src="{%static 'remodeling.png'%}" alt="home remodeling icon">Home_remodeling</a>
+        </div>
+        <div>
+            <a href="{%url 'wedding'%}"><img src="{%static 'tower-of-glasses.png'%}" alt="weddings and live gigs icon">Weddings/Live_Gigs</a>
+        </div>
+        <div>
+            <a href="{%url 'recording'%}"><img src="{%static 'microphone.png'%}" alt="remote recording icon">Remote_recording</a>
+        </div>
+        <div>
+            <a href="{%url 'lessons'%}"><img src="{%static 'lesson.png'%}" alt="music lesson icon">Music_lessons</a>
+        </div>
+
+    </header>
+    <h1>
+        {%block text%}
+        {%endblock%}
+    </h1>
+    <main>
+
+        {%block content%}
+        {%endblock%}
+
+    </main>
+    <footer>Copyright Alan Rahm {%now "Y"%}</footer>
+</body>
+
+</html>

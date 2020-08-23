@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block text%}
+FAQ
+<br>
+<br>
+please e-mail your questions via Contact link
+{%endblock%}
+
+
+{%block content%}
+<style type="text/css">
+    .question {
+        color: rgba(103, 102, 102, 1);
+    }
+
+    .answer {
+        color: rgba(255, 119, 0, 1);
+        text-align: end
+    }
+    .block{
+        width: 600px;
+        height: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        
+        
+    }
+
+</style>
+{%for q in faqs%}
+<div class="block">
+<div class="question">
+    {{q.Questions}}
+
+</div>
+
+<p>
+
+    <div class="answer">
+        {{q.Answers}}
+
+    </div>
+
+</div>
+
+{%endfor%}
+{%endblock%}

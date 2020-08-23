@@ -1,0 +1,60 @@
+{%extends 'base.html'%} 
+
+{%block text%}
+Hello {{user}}
+<p></p>
+Here is how your account will be visible after moderation
+{%endblock%}
+
+{%block content%}
+<style>
+    h2 {
+        color: rgba(255, 119, 0, 1);
+        text-align: center
+    }
+
+    li {
+
+
+        margin-left: 20px;
+    }
+
+    block img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    block {
+        width: 400px;
+        height: auto
+    }
+
+</style>
+<block>
+   
+    <h2>{{personal_page.Name}}</h2>
+    <br>
+    <br>
+    <img src="{{personal_page.Photo.url}}" alt="photo">
+    <br>
+    Instrument(s): {{personal_page.Instrument}}
+    <br>
+    Organization(s): {{personal_page.Organization}}
+    <br>
+    <br>
+    Bio:
+    {{personal_page.Bio}}
+    <br>
+    <br>
+    Services:
+    {%for s in services%}
+    <br>
+    - {{s.Sub_Category}} ({{s.Description}})
+    {%endfor%}
+    
+    <br>
+    <br>
+    Contact: You can reach {{personal_page.Name}} at <a href="mailto:{{personal_page.Email}}">{{personal_page.Email}}</a> or {{personal_page.Phone}}
+</block>
+
+{%endblock%}

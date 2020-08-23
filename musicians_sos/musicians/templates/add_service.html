@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block text%}
+{%if error%}
+{{error}}
+<br />
+<br />
+{%endif%}
+Manage your account service info
+<br>
+For now you have {{all_services}} out of 3 services entered
+{%endblock%}
+
+
+{%block content%}
+
+<form method='POST' action="{%url 'add_service'%}" enctype="multipart/form-data">
+    {%csrf_token%}
+    Choose service:
+    <br />
+    <select name="sub_cat">
+        {%for c in categories%}
+        <option>{{c.Sub_Category}}</option>
+        {%endfor%}
+    </select>
+
+    <br />
+    Enter short description of your service:
+    <br />
+    <input type="text" name='description'>
+   
+
+
+    <input type="submit" value="Save!">
+
+</form>
+
+{%endblock%}

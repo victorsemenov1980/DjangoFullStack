@@ -1,0 +1,82 @@
+{%extends 'base.html'%}
+{%block text%}
+
+<style>
+    h3 {
+        font-family: 'Lobster1.4';
+        font-size: 20px;
+        color: rgba(255, 119, 0, 1);
+        text-align: center;
+    }
+
+</style>
+Nashville SOS help site COVID19 help Musicians
+<br>
+<br>
+<h3 class="Info">{{info}} </h3>
+{%endblock%}
+
+{%block content%}
+<style type="text/css">
+    .photo {
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+        max-height: 250px;
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+    }
+
+    .element divphoto {
+        width: 400px;
+        height: 250px;
+        display: block
+    }
+
+    .element {
+        width: 400px;
+        height: 450px;
+        border: 1px solid black;
+        margin-bottom: 30px;
+        text-overflow: ellipsis;
+
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .element h4 {
+        color: rgba(255, 119, 0, 1);
+    }
+
+</style>
+
+{%for d in data%}
+<element class="element">
+    {%if d.IsValid%}
+
+    <h4>{{d.Name}}</h4>
+
+    <divPhoto>
+        <img class="photo" src="{{d.Photo.url}}" alt="photo">
+    </divPhoto>
+    <br>
+    <divCover>
+        <h7>
+            {{d.CoverLetter}}
+            <br>
+            <br>
+            <a href="{%url 'account' d.id %}">SEE MY PAGE</a>
+            <br>
+        </h7>
+    </divCover>
+
+    {%endif%}
+</element>
+{%endfor%}
+
+
+{%endblock%}

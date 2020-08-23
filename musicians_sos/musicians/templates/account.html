@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+
+{%block text%}
+Personal page of the musician
+{%endblock%}
+
+{%block content%}
+<style>
+    h2 {
+        color: rgba(255, 119, 0, 1);
+        text-align: center
+    }
+
+    li {
+
+
+        margin-left: 20px;
+    }
+
+    block img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    block {
+        width: 400px;
+        height: auto
+    }
+
+</style>
+<block>
+    {%if account.IsValid%}
+    <h2>{{account.Name}}</h2>
+    <br>
+    <br>
+    <img src="{{account.Photo.url}}" alt="photo">
+    <br>
+    <br>
+    Instrument(s): {{account.Instrument}}
+    <br>
+    Organization(s): {{account.Organization}}
+    <br>
+    <br>
+    Bio:
+    {{account.Bio}}
+    <br>
+    <br>
+    Services:
+    {%for s in services%}
+    <br>
+    - {{s.Sub_Category}} ({{s.Description}})
+    {%endfor%}
+
+    <br>
+
+    <br>
+    Contact: You can reach {{account.Name}} at <a href="mailto:{{account.Email}}">{{account.Email}}</a> or {{account.Phone}}
+    {%endif%}
+</block>
+
+{%endblock%}

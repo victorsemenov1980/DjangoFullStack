@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block text%}
+{%if error%}
+{{error}}
+<br />
+<br />
+{%endif%}
+LOG IN!
+{%endblock%}
+
+{%block content%}
+
+
+
+<br />
+<form method='POST' action="{%url 'login'%}">
+    {%csrf_token%}
+    Username:
+    <br />
+    <input type="text" name='username' />
+    <br />
+    Password:
+    <br />
+    <input type="password" name='password' />
+    <br />
+    <input type="submit" value="Log me in!" />
+
+</form>
+{%endblock%}

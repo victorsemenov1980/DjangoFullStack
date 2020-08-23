@@ -1,0 +1,119 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header {
+    height: 113px;
+    background-image: -webkit-linear-gradient(rgba(224, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background-image: -moz-linear-gradient(rgba(224, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background-image: -o-linear-gradient(rgba(224, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background-image: linear-gradient(rgba(224, 224, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header a {
+
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+    font-family: 'HelveticaCE';
+    font-size: 10px;
+    color: rgba(84, 84, 84, 1);
+    line-height: 23px;
+
+
+}
+
+header a img {
+    height: 18px;
+    width: 19px;
+    top: -10px;
+    left:35px;
+    position:relative;
+   
+
+}
+
+divLinks {
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+    font-family: 'HelveticaCE';
+    font-size: 10px;
+    color: rgba(84, 84, 84, 1);
+    line-height: 23px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+
+
+}
+
+
+
+h1 {
+    height: 26px;
+
+    font-family: 'HelveticaCE';
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(86, 85, 85, 1);
+    line-height: 23px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+main img {
+    margin-right: 16px;
+    margin-left: 16px;
+    width: 350px;
+    margin-bottom: 32px;
+}
+
+main p {
+    font-size: 24px;
+    font-weight: 100;
+    color: #242424;
+    line-height: 36px;
+    width: 706px;
+}
+
+footer {
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+header divName {
+
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+header div1 {
+
+
+    font-family: 'Lobster1.4';
+    font-size: 27px;
+    color: rgba(255, 119, 0, 1);
+
+}
+
+header div {
+
+
+    font-family: 'Lobster1.4';
+    font-size: 25px;
+    color: rgba(103, 102, 102, 1);
+}
