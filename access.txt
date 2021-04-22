@@ -1,3 +1,0 @@
-Superuser
-Name: alan
-Pass: helpmusicians
